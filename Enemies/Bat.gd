@@ -12,6 +12,7 @@ export var WANDER_TARGET_RANGE = 5
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
 	animationPlayer.play("Stop")
+	sprite.playing = true;
 
 #состояния
 enum {
