@@ -512,7 +512,7 @@ position = Vector2( 114, 67 )
 position = Vector2( -262, -174 )
 
 [node name="BottomRight" parent="Camera2D/Limits" index="1"]
-position = Vector2( 584, 370 )
+position = Vector2( 632, 397 )
 
 [node name="YSort" type="YSort" parent="."]
 
