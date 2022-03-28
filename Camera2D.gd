@@ -9,3 +9,9 @@ func _ready():
 	limit_top = topLeft.position.y
 	limit_right = bottomRight.position.x
 	limit_bottom = bottomRight.position.y
+
+
+func _on_MaimMenu_pressed():
+	pass # Replace with function body.
+
+
