@@ -53,12 +53,7 @@ RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 [display]
 
 window/size/width=320
-<<<<<<< HEAD
 window/size/height=200
-=======
-window/size/height=180
-window/size/fullscreen=true
->>>>>>> d394b5f36c6c44f429b9327afd6037cd52d20c85
 window/size/test_width=1280
 window/size/test_height=720
 window/stretch/mode="2d"
