@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Главное-меню-кнопка нАЖАТА.png-7845fd677e6d8f04b87b4e9b9323a7ba.stex"
+path="res://.import/Главное-меню-кнопка нАЖАТА.png-bf68f8fdcefbe0236c89a6fb9e70ad31.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Интерфейсы/Кнопки/Главное-меню-кнопка нАЖАТА.png"
-dest_files=[ "res://.import/Главное-меню-кнопка нАЖАТА.png-7845fd677e6d8f04b87b4e9b9323a7ba.stex" ]
+source_file="res://UI/Интерфейсы/Кнопки/Начальное меню/Главное-меню-кнопка нАЖАТА.png"
+dest_files=[ "res://.import/Главное-меню-кнопка нАЖАТА.png-bf68f8fdcefbe0236c89a6fb9e70ad31.stex" ]
 
 [params]
 

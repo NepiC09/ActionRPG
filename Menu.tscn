@@ -1,17 +1,16 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Без кнопок.png" type="Texture" id=1]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Без кнопок.png" type="Texture" id=1]
 [ext_resource path="res://UI/Шрифты/vcrosdmonorusbyd.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Menu.gd" type="Script" id=3]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопка 1.png" type="Texture" id=4]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопка 1 нажата.png" type="Texture" id=5]
-[ext_resource path="res://UI/Интерфейсы/GUI_2x_0000_Слой-2.png" type="Texture" id=6]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопка 2.png" type="Texture" id=7]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопка 2 нажата.png" type="Texture" id=8]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Настройки.png" type="Texture" id=9]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Настройки нажата.png" type="Texture" id=10]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Выйти из игры Нажата.png" type="Texture" id=11]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Выйти из игры.png" type="Texture" id=12]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 1 нажата.png" type="Texture" id=4]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Настройки нажата.png" type="Texture" id=5]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Выйти из игры.png" type="Texture" id=6]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Настройки.png" type="Texture" id=7]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Выйти из игры Нажата.png" type="Texture" id=8]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 2.png" type="Texture" id=9]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 2 нажата.png" type="Texture" id=10]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 1.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 9
@@ -30,12 +29,6 @@ font_data = ExtResource( 2 )
 size = 9
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
-size = 12
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 2 )
-
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -44,20 +37,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 116.0
-margin_top = 55.0
-margin_right = -140.0
-margin_bottom = -83.0
-texture = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Фон зелени" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
@@ -67,7 +47,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button - Играть" type="Button" parent="TextureRect"]
+[node name="Button - Играть" type="Button" parent="Фон зелени"]
 visible = false
 self_modulate = Color( 0.627451, 0.607843, 0.00392157, 1 )
 margin_left = 132.0
@@ -86,7 +66,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button2 - Начать новую игру" type="Button" parent="TextureRect"]
+[node name="Button2 - Начать новую игру" type="Button" parent="Фон зелени"]
 visible = false
 self_modulate = Color( 0.627451, 0.607843, 0.00392157, 1 )
 margin_left = 92.0
@@ -99,7 +79,7 @@ action_mode = 0
 text = "Начать новую игру"
 flat = true
 
-[node name="Button3 - Настройки" type="Button" parent="TextureRect"]
+[node name="Button3 - Настройки" type="Button" parent="Фон зелени"]
 visible = false
 self_modulate = Color( 0.627451, 0.607843, 0.00392157, 1 )
 anchor_right = 0.051
@@ -115,7 +95,7 @@ action_mode = 0
 text = "Настройки"
 flat = true
 
-[node name="Button4 - Выход" type="Button" parent="TextureRect"]
+[node name="Button4 - Выход" type="Button" parent="Фон зелени"]
 visible = false
 self_modulate = Color( 0.627451, 0.607843, 0.00392157, 1 )
 margin_left = 137.0
@@ -131,54 +111,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Кнопка Играть Вторая версия" type="TextureButton" parent="TextureRect"]
+[node name="Кнопка Продолжить игру" type="TextureButton" parent="."]
 margin_left = 95.0
 margin_top = 42.0
 margin_right = 219.0
 margin_bottom = 63.159
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 4 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="TextureRect/Кнопка Играть Вторая версия"]
-visible = false
-self_modulate = Color( 0.823529, 0.847059, 0.0666667, 1 )
-light_mask = 3
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -28.0
-margin_top = -8.5
-margin_right = 26.0
-margin_bottom = 3.5
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 5 )
-text = "Играть"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Кнопка Начать новую игру" type="TextureButton" parent="TextureRect"]
+[node name="Кнопка Начать новую игру" type="TextureButton" parent="."]
 margin_left = 95.0
 margin_top = 69.0
 margin_right = 219.0
 margin_bottom = 90.159
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Кнопка Настройка" type="TextureButton" parent="TextureRect"]
-margin_left = 95.0
-margin_top = 97.0
-margin_right = 219.0
-margin_bottom = 118.159
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 10 )
 expand = true
@@ -186,21 +135,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Кнопка Выйти из игры" type="TextureButton" parent="TextureRect"]
+[node name="Кнопка Настройка" type="TextureButton" parent="."]
 margin_left = 95.0
-margin_top = 124.0
+margin_top = 97.0
 margin_right = 219.0
-margin_bottom = 145.159
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 11 )
+margin_bottom = 118.159
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 5 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Кнопка Выйти из игры" type="TextureButton" parent="."]
+margin_left = 95.0
+margin_top = 124.0
+margin_right = 219.0
+margin_bottom = 145.159
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[connection signal="pressed" from="TextureRect/Button - Играть" to="." method="_on_Button___pressed"]
-[connection signal="pressed" from="TextureRect/Кнопка Играть Вторая версия" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="TextureRect/Кнопка Выйти из игры" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="TextureRect/Кнопка Выйти из игры" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Фон зелени/Button - Играть" to="." method="_on_Button___pressed"]
+[connection signal="pressed" from="Кнопка Продолжить игру" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Кнопка Выйти из игры" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Кнопка Выйти из игры" to="." method="_on_TextureButton_pressed"]

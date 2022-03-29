@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Выйти из игры Нажата.png-b77b9415ebe96c6bd72b26eee1491314.stex"
+path="res://.import/Настройки нажата.png-377590b36b27cf3563e44c45d0592922.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Интерфейсы/Кнопки/Выйти из игры Нажата.png"
-dest_files=[ "res://.import/Выйти из игры Нажата.png-b77b9415ebe96c6bd72b26eee1491314.stex" ]
+source_file="res://UI/Интерфейсы/Кнопки/Начальное меню/Настройки нажата.png"
+dest_files=[ "res://.import/Настройки нажата.png-377590b36b27cf3563e44c45d0592922.stex" ]
 
 [params]
 

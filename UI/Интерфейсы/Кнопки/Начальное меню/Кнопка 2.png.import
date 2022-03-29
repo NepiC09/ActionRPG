@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Выйти из игры.png-ed0591852b1a0877fce70ac11e27e904.stex"
+path="res://.import/Кнопка 2.png-fcb7a4baa21691448b06c87fe19f355a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Интерфейсы/Кнопки/Выйти из игры.png"
-dest_files=[ "res://.import/Выйти из игры.png-ed0591852b1a0877fce70ac11e27e904.stex" ]
+source_file="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 2.png"
+dest_files=[ "res://.import/Кнопка 2.png-fcb7a4baa21691448b06c87fe19f355a.stex" ]
 
 [params]
 

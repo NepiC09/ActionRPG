@@ -18,6 +18,10 @@ var velocity = Vector2.ZERO
 #PlayerStats наш глобальный объект
 var stats = PlayerStats
 
+#var input_vector = Vector2.ZERO
+onready var input_vector = get_node("/root/FS").input_vectorG
+
+
 #константы передвижения
 export var ACCELERATION = 600
 export var MAX_SPEED = 80
@@ -56,10 +60,11 @@ func _physics_process(delta):
 #функция движения
 func move_state(delta):
 	#получаемый вектор из кнопок
-	var input_vector = Vector2.ZERO
+	#var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
+	#print(input_vector.x, " ", input_vector.y)
 	#для адекватного диагонального движения
 	input_vector = input_vector.normalized()
 	

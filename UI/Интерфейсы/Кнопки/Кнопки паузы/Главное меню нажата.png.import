@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Настройки.png-e87e2a3bd79d9f033c238263e42b045a.stex"
+path="res://.import/Главное меню нажата.png-888e1307cf40446349939781f49862b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Интерфейсы/Кнопки/Настройки.png"
-dest_files=[ "res://.import/Настройки.png-e87e2a3bd79d9f033c238263e42b045a.stex" ]
+source_file="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Главное меню нажата.png"
+dest_files=[ "res://.import/Главное меню нажата.png-888e1307cf40446349939781f49862b8.stex" ]
 
 [params]
 

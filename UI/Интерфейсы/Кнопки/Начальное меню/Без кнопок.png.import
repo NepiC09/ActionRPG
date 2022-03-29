@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/buttons_2x_0002_Бат-3.png-99adf32d9d836bb65ea09ee5a2635146.stex"
+path="res://.import/Без кнопок.png-36bec47ef4d0e40c8982074640567c36.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Интерфейсы/buttons_2x_0002_Бат-3.png"
-dest_files=[ "res://.import/buttons_2x_0002_Бат-3.png-99adf32d9d836bb65ea09ee5a2635146.stex" ]
+source_file="res://UI/Интерфейсы/Кнопки/Начальное меню/Без кнопок.png"
+dest_files=[ "res://.import/Без кнопок.png-36bec47ef4d0e40c8982074640567c36.stex" ]
 
 [params]
 

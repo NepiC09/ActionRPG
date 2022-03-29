@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,8 +11,14 @@
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Pause.gd" type="Script" id=11]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Главное-меню-кнопка_.png" type="Texture" id=13]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Главное-меню-кнопка нАЖАТА.png" type="Texture" id=14]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Сохранить игру нажата.png" type="Texture" id=12]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Главное меню нажата.png" type="Texture" id=13]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Вернуться.png" type="Texture" id=14]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Сохранить игру.png" type="Texture" id=15]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Настройки нажата.png" type="Texture" id=16]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Главное меню.png" type="Texture" id=17]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Настройки.png" type="Texture" id=18]
+[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Вернуться нажата.png" type="Texture" id=19]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -489,6 +495,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 0/z_index = 0
 
 [node name="World" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 4, 33 )
@@ -514,6 +523,7 @@ position = Vector2( 114, 67 )
 
 [node name="TopLeft" parent="Camera2D/Limits" index="0"]
 position = Vector2( -231, -409 )
+scale = Vector2( 0.255305, 0.207852 )
 
 [node name="BottomRight" parent="Camera2D/Limits" index="1"]
 position = Vector2( 247, 477 )
@@ -627,9 +637,9 @@ margin_top = 5.0
 margin_right = 53.0
 margin_bottom = 21.0
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="PauseSreen" type="CanvasLayer" parent="."]
 
-[node name="Pause" type="Control" parent="CanvasLayer2"]
+[node name="Pause" type="Control" parent="PauseSreen"]
 pause_mode = 2
 visible = false
 anchor_right = 1.0
@@ -639,7 +649,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BlackOverlay" type="ColorRect" parent="CanvasLayer2/Pause"]
+[node name="BlackOverlay" type="ColorRect" parent="PauseSreen/Pause"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_scale = Vector2( 1.01012, 1.01292 )
@@ -648,14 +658,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer2/Pause"]
-margin_left = 97.0
-margin_top = 68.0
-margin_right = 221.0
-margin_bottom = 108.0
-texture_normal = ExtResource( 13 )
-texture_pressed = ExtResource( 14 )
+[node name="Вернуться" type="TextureButton" parent="PauseSreen/Pause"]
+margin_left = 105.0
+margin_top = 36.0
+margin_right = 229.0
+margin_bottom = 59.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[connection signal="pressed" from="CanvasLayer2/Pause/TextureButton" to="CanvasLayer2/Pause" method="_on_TextureButton_pressed"]
+[node name="Сохранить игру" type="TextureButton" parent="PauseSreen/Pause"]
+margin_left = 105.0
+margin_top = 63.0
+margin_right = 229.0
+margin_bottom = 86.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 12 )
+
+[node name="Настройки" type="TextureButton" parent="PauseSreen/Pause"]
+margin_left = 105.0
+margin_top = 90.0
+margin_right = 229.0
+margin_bottom = 113.0
+texture_normal = ExtResource( 18 )
+texture_pressed = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Главное меню" type="TextureButton" parent="PauseSreen/Pause"]
+margin_left = 105.0
+margin_top = 117.0
+margin_right = 229.0
+margin_bottom = 140.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PauseSreen/Pause/Вернуться" to="PauseSreen/Pause" method="_on_Back_pressed"]
+[connection signal="pressed" from="PauseSreen/Pause/Сохранить игру" to="PauseSreen/Pause" method="_on__SaveGame_pressed"]
+[connection signal="pressed" from="PauseSreen/Pause/Главное меню" to="PauseSreen/Pause" method="_on_RerurnInMainMenu_pressed"]
 
 [editable path="Camera2D"]

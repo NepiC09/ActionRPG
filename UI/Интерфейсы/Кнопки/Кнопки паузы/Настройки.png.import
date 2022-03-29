@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Без кнопок.png-f9b0d7723defc793ccfbd2331ce8af21.stex"
+path="res://.import/Настройки.png-d2300f4a29d69dbc4451e60946d999ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Интерфейсы/Кнопки/Без кнопок.png"
-dest_files=[ "res://.import/Без кнопок.png-f9b0d7723defc793ccfbd2331ce8af21.stex" ]
+source_file="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Настройки.png"
+dest_files=[ "res://.import/Настройки.png-d2300f4a29d69dbc4451e60946d999ec.stex" ]
 
 [params]
 

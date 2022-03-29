@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Кнопка 2 нажата.png-eda969700a1022382ec09fa91e28aef2.stex"
+path="res://.import/Кнопка 1.png-6f0fa5b7ab14980532ddf66a1eb42a81.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Интерфейсы/Кнопки/Кнопка 2 нажата.png"
-dest_files=[ "res://.import/Кнопка 2 нажата.png-eda969700a1022382ec09fa91e28aef2.stex" ]
+source_file="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 1.png"
+dest_files=[ "res://.import/Кнопка 1.png-6f0fa5b7ab14980532ddf66a1eb42a81.stex" ]
 
 [params]
 
