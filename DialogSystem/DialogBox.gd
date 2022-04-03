@@ -2,8 +2,10 @@ extends Node2D
 
 onready var dialogBoxText = $DialogBoxTEXT
 onready var dialogBox = $DialogBox
+var stats = PlayerStats
 
-var dialog = ["Хайо, я хомяк в облике лисы...", "И я зарежу всех этих мышей потому что такова игра...", ""]
+var dialog = ["Хайо, я хомяк в облике лисы...", "И я зарежу всех этих мышей потому что таков путь...", ""]
+var death_dialog = "Чёртовы мыши..."
 var page = 0;
 
 func _ready():
@@ -12,6 +14,7 @@ func _ready():
 	dialogBoxText.set_process_input(true)
 	dialogBoxText.visible = false
 	dialogBox.visible = false
+	stats.connect("no_health", self, "death")
 
 func _input(event):
 	if(PlayerStats.health > 0):
@@ -32,6 +35,13 @@ func _input(event):
 		if event.is_action_released("E") and dialogBoxText.visible == false:
 			dialogBoxText.visible = true
 			dialogBox.visible = true
+
+func death():
+	page = 0
+	dialogBoxText.set_bbcode(death_dialog)
+	dialogBoxText.visible_characters = 0
+	dialogBoxText.visible = true
+	dialogBox.visible = true
 
 
 func _on_Timer_timeout():
