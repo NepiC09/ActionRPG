@@ -12,10 +12,9 @@ func _ready():
 	dialogBoxText.set_process_input(true)
 	dialogBoxText.visible = false
 	dialogBox.visible = false
-	
 
 func _input(event):
-	if event.is_action_pressed("E") and dialogBoxText.visible == true:
+	if event.is_action_released("ui_accept") and dialogBoxText.visible == true:
 		if dialogBoxText.visible_characters > dialogBoxText.get_total_character_count():
 			if page < dialog.size() - 1:
 				page += 1
@@ -29,7 +28,7 @@ func _input(event):
 				dialogBox.visible = false
 		else: 
 			dialogBoxText.visible_characters = dialogBoxText.get_total_character_count()
-	if event.is_action_pressed("E") and dialogBoxText.visible == false:
+	if event.is_action_released("E") and dialogBoxText.visible == false:
 		dialogBoxText.visible = true
 		dialogBox.visible = true
 
