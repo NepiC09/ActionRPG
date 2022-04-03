@@ -14,23 +14,24 @@ func _ready():
 	dialogBox.visible = false
 
 func _input(event):
-	if event.is_action_released("ui_accept") and dialogBoxText.visible == true:
-		if dialogBoxText.visible_characters > dialogBoxText.get_total_character_count():
-			if page < dialog.size() - 1:
-				page += 1
-				dialogBoxText.set_bbcode(dialog[page])
-				dialogBoxText.visible_characters = 0
-			if page >= dialog.size() - 1:
-				page = 0
-				dialogBoxText.set_bbcode(dialog[page])
-				dialogBoxText.visible_characters = 0
-				dialogBoxText.visible = false
-				dialogBox.visible = false
-		else: 
-			dialogBoxText.visible_characters = dialogBoxText.get_total_character_count()
-	if event.is_action_released("E") and dialogBoxText.visible == false:
-		dialogBoxText.visible = true
-		dialogBox.visible = true
+	if(PlayerStats.health > 0):
+		if event.is_action_released("ui_accept") and dialogBoxText.visible == true:
+			if dialogBoxText.visible_characters > dialogBoxText.get_total_character_count():
+				if page < dialog.size() - 1:
+					page += 1
+					dialogBoxText.set_bbcode(dialog[page])
+					dialogBoxText.visible_characters = 0
+				if page >= dialog.size() - 1:
+					page = 0
+					dialogBoxText.set_bbcode(dialog[page])
+					dialogBoxText.visible_characters = 0
+					dialogBoxText.visible = false
+					dialogBox.visible = false
+			else: 
+				dialogBoxText.visible_characters = dialogBoxText.get_total_character_count()
+		if event.is_action_released("E") and dialogBoxText.visible == false:
+			dialogBoxText.visible = true
+			dialogBox.visible = true
 
 
 func _on_Timer_timeout():
