@@ -17,7 +17,7 @@ autostart = true
 
 [node name="DialogBox" type="Polygon2D" parent="."]
 position = Vector2( -64, -40 )
-color = Color( 0.247059, 0.164706, 0.219608, 1 )
+color = Color( 0.247059, 0.164706, 0.219608, 0.631373 )
 offset = Vector2( 64, 104 )
 polygon = PoolVector2Array( -144, 48, -144, 0, 0, 0, 144, 0, 144, 48 )
 
