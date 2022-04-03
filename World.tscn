@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Главное меню.png" type="Texture" id=17]
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Настройки.png" type="Texture" id=18]
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Вернуться нажата.png" type="Texture" id=19]
+[ext_resource path="res://DialogSystem/DialogBox.tscn" type="PackedScene" id=20]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -636,6 +637,9 @@ margin_left = 5.0
 margin_top = 5.0
 margin_right = 53.0
 margin_bottom = 21.0
+
+[node name="DialogBox" parent="CanvasLayer" instance=ExtResource( 20 )]
+position = Vector2( 161, 81 )
 
 [node name="PauseSreen" type="CanvasLayer" parent="."]
 
