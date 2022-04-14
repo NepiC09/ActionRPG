@@ -504,7 +504,7 @@ __meta__ = {
 position = Vector2( 4, 33 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1616, 992 )
+region_rect = Rect2( 0, 0, 10000, 10000 )
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -523,7 +523,7 @@ tile_data = PoolIntArray( -917530, 0, 0, -917529, 0, 1, -917528, 0, 1, -917527, 
 position = Vector2( -233, -107 )
 
 [node name="TopLeft" parent="Camera2D/Limits" index="0"]
-position = Vector2( -841, -489 )
+position = Vector2( -832, -480 )
 scale = Vector2( 0.255305, 0.207852 )
 
 [node name="BottomRight" parent="Camera2D/Limits" index="1"]
