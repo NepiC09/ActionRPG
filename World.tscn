@@ -504,7 +504,7 @@ __meta__ = {
 position = Vector2( 4, 33 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 10000, 10000 )
+region_rect = Rect2( 0, 0, 3000, 3000 )
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
