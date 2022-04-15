@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -21,6 +21,10 @@
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Вернуться нажата.png" type="Texture" id=19]
 [ext_resource path="res://DialogSystem/DialogBox.tscn" type="PackedScene" id=20]
 [ext_resource path="res://World/Cactus.tscn" type="PackedScene" id=21]
+[ext_resource path="res://World/Объекты WW/Кактус1.png" type="Texture" id=22]
+[ext_resource path="res://World/Объекты WW/Кактус5.png" type="Texture" id=23]
+[ext_resource path="res://World/Объекты WW/Кактус3.png" type="Texture" id=24]
+[ext_resource path="res://World/Объекты WW/Кактус4.png" type="Texture" id=25]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -496,6 +500,43 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 0/z_index = 0
 
+[sub_resource type="GDScript" id=50]
+script/source = "extends Node2D
+#предзагружаем сцену сразу, чтобы не загружать её постоянно 
+const GrassEffect = preload(\"res://Effects/GrassEffect.tscn\")
+
+func create_grass_effect():
+	#получаем данные сцены
+	var grassEffect = GrassEffect.instance()
+	#создаём у родителя ребёнка - grassEffect
+	get_parent().add_child(grassEffect)
+	#на всякий случай (?)
+	grassEffect.global_position = global_position
+
+#когда арена входит в арену
+func _on_Hurtbox_area_entered(_area):
+	#вызываем функцию
+	create_grass_effect()
+	#удаляем обект
+	queue_free()
+"
+
+[sub_resource type="CapsuleShape2D" id=55]
+radius = 0.909073
+height = 9.09094
+
+[sub_resource type="CapsuleShape2D" id=52]
+radius = 1.11111
+height = 8.68686
+
+[sub_resource type="CapsuleShape2D" id=53]
+radius = 0.909088
+height = 7.27274
+
+[sub_resource type="CapsuleShape2D" id=54]
+radius = 0.909058
+height = 7.2728
+
 [node name="World" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
@@ -780,6 +821,64 @@ position = Vector2( -280, -128 )
 [node name="Cactus6" parent="YSort/Cactuses" instance=ExtResource( 21 )]
 position = Vector2( -272, -88 )
 
+[node name="version1" parent="YSort/Cactuses" instance=ExtResource( 21 )]
+position = Vector2( -194, -168 )
+
+[node name="version2" parent="YSort/Cactuses" instance=ExtResource( 21 )]
+position = Vector2( -146, -168 )
+script = SubResource( 50 )
+
+[node name="Sprite" parent="YSort/Cactuses/version2" index="0"]
+position = Vector2( 8, -3 )
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D2" parent="YSort/Cactuses/version2/StaticBody2D" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="YSort/Cactuses/version2/Hitbox" index="0"]
+position = Vector2( 0, -9 )
+scale = Vector2( 0.9, 1.1 )
+shape = SubResource( 55 )
+
+[node name="version3" parent="YSort/Cactuses" instance=ExtResource( 21 )]
+position = Vector2( -130, -168 )
+
+[node name="Sprite" parent="YSort/Cactuses/version3" index="0"]
+position = Vector2( 8, 6 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" parent="YSort/Cactuses/version3/Hitbox" index="0"]
+position = Vector2( 1, -9 )
+scale = Vector2( 0.9, 1.1 )
+shape = SubResource( 52 )
+
+[node name="version4" parent="YSort/Cactuses" instance=ExtResource( 21 )]
+position = Vector2( -178, -168 )
+
+[node name="Sprite" parent="YSort/Cactuses/version4" index="0"]
+position = Vector2( 8, -9 )
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D2" parent="YSort/Cactuses/version4/StaticBody2D" index="0"]
+position = Vector2( -1, -4 )
+
+[node name="CollisionShape2D" parent="YSort/Cactuses/version4/Hitbox" index="0"]
+position = Vector2( -1, -9 )
+scale = Vector2( 0.9, 1.1 )
+shape = SubResource( 53 )
+
+[node name="version5" parent="YSort/Cactuses" instance=ExtResource( 21 )]
+position = Vector2( -162, -168 )
+
+[node name="Sprite" parent="YSort/Cactuses/version5" index="0"]
+position = Vector2( 8, 3 )
+texture = ExtResource( 23 )
+
+[node name="CollisionShape2D" parent="YSort/Cactuses/version5/Hitbox" index="0"]
+position = Vector2( 0, -9 )
+scale = Vector2( 0.9, 1.1 )
+shape = SubResource( 54 )
+
 [node name="Cactus7" parent="YSort/Cactuses" instance=ExtResource( 21 )]
 position = Vector2( -272, -136 )
 
@@ -915,3 +1014,15 @@ __meta__ = {
 [connection signal="pressed" from="PauseSreen/Pause/Главное меню" to="PauseSreen/Pause" method="_on_RerurnInMainMenu_pressed"]
 
 [editable path="Camera2D"]
+[editable path="YSort/Cactuses/version2"]
+[editable path="YSort/Cactuses/version2/Hurtbox"]
+[editable path="YSort/Cactuses/version2/Hitbox"]
+[editable path="YSort/Cactuses/version3"]
+[editable path="YSort/Cactuses/version3/Hurtbox"]
+[editable path="YSort/Cactuses/version3/Hitbox"]
+[editable path="YSort/Cactuses/version4"]
+[editable path="YSort/Cactuses/version4/Hurtbox"]
+[editable path="YSort/Cactuses/version4/Hitbox"]
+[editable path="YSort/Cactuses/version5"]
+[editable path="YSort/Cactuses/version5/Hurtbox"]
+[editable path="YSort/Cactuses/version5/Hitbox"]
