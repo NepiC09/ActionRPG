@@ -19,7 +19,7 @@ var velocity = Vector2.ZERO
 var stats = PlayerStats
 
 #var input_vector = Vector2.ZERO
-onready var input_vector = get_node("/root/FS").input_vectorG
+#onready var input_vector = get_node("/root/FS").input_vectorG
 
 
 #константы передвижения
@@ -60,7 +60,7 @@ func _physics_process(delta):
 #функция движения
 func move_state(delta):
 	#получаемый вектор из кнопок
-	#var input_vector = Vector2.ZERO
+	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
@@ -99,6 +99,8 @@ func move_state(delta):
 	#если нажато действие roll - переключаем состояние на ROLL
 	if Input.is_action_just_pressed("roll"):
 		state = ROLL
+		
+	print(velocity.x, " ", velocity.y)
 
 #функция если нажата attack
 func attack_state():
