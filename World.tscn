@@ -806,17 +806,8 @@ position = Vector2( 304, 168 )
 [node name="Cactus" parent="YSort/Cactuses" instance=ExtResource( 21 )]
 position = Vector2( -280, -96 )
 
-[node name="Cactus2" parent="YSort/Cactuses" instance=ExtResource( 21 )]
-position = Vector2( -280, -104 )
-
-[node name="Cactus3" parent="YSort/Cactuses" instance=ExtResource( 21 )]
-position = Vector2( -280, -112 )
-
 [node name="Cactus4" parent="YSort/Cactuses" instance=ExtResource( 21 )]
 position = Vector2( -280, -120 )
-
-[node name="Cactus5" parent="YSort/Cactuses" instance=ExtResource( 21 )]
-position = Vector2( -280, -128 )
 
 [node name="Cactus6" parent="YSort/Cactuses" instance=ExtResource( 21 )]
 position = Vector2( -272, -88 )
@@ -840,6 +831,38 @@ position = Vector2( 0, -9 )
 scale = Vector2( 0.9, 1.1 )
 shape = SubResource( 55 )
 
+[node name="version10" parent="YSort/Cactuses" instance=ExtResource( 21 )]
+position = Vector2( -293, -115 )
+script = SubResource( 50 )
+
+[node name="Sprite" parent="YSort/Cactuses/version10" index="0"]
+position = Vector2( 8, -3 )
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D2" parent="YSort/Cactuses/version10/StaticBody2D" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="YSort/Cactuses/version10/Hitbox" index="0"]
+position = Vector2( 0, -9 )
+scale = Vector2( 0.9, 1.1 )
+shape = SubResource( 55 )
+
+[node name="version7" parent="YSort/Cactuses" instance=ExtResource( 21 )]
+position = Vector2( -397, -116 )
+script = SubResource( 50 )
+
+[node name="Sprite" parent="YSort/Cactuses/version7" index="0"]
+position = Vector2( 8, -3 )
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D2" parent="YSort/Cactuses/version7/StaticBody2D" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="YSort/Cactuses/version7/Hitbox" index="0"]
+position = Vector2( 0, -9 )
+scale = Vector2( 0.9, 1.1 )
+shape = SubResource( 55 )
+
 [node name="version3" parent="YSort/Cactuses" instance=ExtResource( 21 )]
 position = Vector2( -130, -168 )
 
@@ -848,6 +871,18 @@ position = Vector2( 8, 6 )
 texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" parent="YSort/Cactuses/version3/Hitbox" index="0"]
+position = Vector2( 1, -9 )
+scale = Vector2( 0.9, 1.1 )
+shape = SubResource( 52 )
+
+[node name="version11" parent="YSort/Cactuses" instance=ExtResource( 21 )]
+position = Vector2( -287, -105 )
+
+[node name="Sprite" parent="YSort/Cactuses/version11" index="0"]
+position = Vector2( 8, 6 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" parent="YSort/Cactuses/version11/Hitbox" index="0"]
 position = Vector2( 1, -9 )
 scale = Vector2( 0.9, 1.1 )
 shape = SubResource( 52 )
@@ -867,6 +902,36 @@ position = Vector2( -1, -9 )
 scale = Vector2( 0.9, 1.1 )
 shape = SubResource( 53 )
 
+[node name="version9" parent="YSort/Cactuses" instance=ExtResource( 21 )]
+position = Vector2( -279, -126 )
+
+[node name="Sprite" parent="YSort/Cactuses/version9" index="0"]
+position = Vector2( 8, -9 )
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D2" parent="YSort/Cactuses/version9/StaticBody2D" index="0"]
+position = Vector2( -1, -4 )
+
+[node name="CollisionShape2D" parent="YSort/Cactuses/version9/Hitbox" index="0"]
+position = Vector2( -1, -9 )
+scale = Vector2( 0.9, 1.1 )
+shape = SubResource( 53 )
+
+[node name="version6" parent="YSort/Cactuses" instance=ExtResource( 21 )]
+position = Vector2( -402, -155 )
+
+[node name="Sprite" parent="YSort/Cactuses/version6" index="0"]
+position = Vector2( 8, -9 )
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D2" parent="YSort/Cactuses/version6/StaticBody2D" index="0"]
+position = Vector2( -1, -4 )
+
+[node name="CollisionShape2D" parent="YSort/Cactuses/version6/Hitbox" index="0"]
+position = Vector2( -1, -9 )
+scale = Vector2( 0.9, 1.1 )
+shape = SubResource( 53 )
+
 [node name="version5" parent="YSort/Cactuses" instance=ExtResource( 21 )]
 position = Vector2( -162, -168 )
 
@@ -875,6 +940,18 @@ position = Vector2( 8, 3 )
 texture = ExtResource( 23 )
 
 [node name="CollisionShape2D" parent="YSort/Cactuses/version5/Hitbox" index="0"]
+position = Vector2( 0, -9 )
+scale = Vector2( 0.9, 1.1 )
+shape = SubResource( 54 )
+
+[node name="version8" parent="YSort/Cactuses" instance=ExtResource( 21 )]
+position = Vector2( -526, -142 )
+
+[node name="Sprite" parent="YSort/Cactuses/version8" index="0"]
+position = Vector2( 8, 3 )
+texture = ExtResource( 23 )
+
+[node name="CollisionShape2D" parent="YSort/Cactuses/version8/Hitbox" index="0"]
 position = Vector2( 0, -9 )
 scale = Vector2( 0.9, 1.1 )
 shape = SubResource( 54 )
@@ -1017,12 +1094,30 @@ __meta__ = {
 [editable path="YSort/Cactuses/version2"]
 [editable path="YSort/Cactuses/version2/Hurtbox"]
 [editable path="YSort/Cactuses/version2/Hitbox"]
+[editable path="YSort/Cactuses/version10"]
+[editable path="YSort/Cactuses/version10/Hurtbox"]
+[editable path="YSort/Cactuses/version10/Hitbox"]
+[editable path="YSort/Cactuses/version7"]
+[editable path="YSort/Cactuses/version7/Hurtbox"]
+[editable path="YSort/Cactuses/version7/Hitbox"]
 [editable path="YSort/Cactuses/version3"]
 [editable path="YSort/Cactuses/version3/Hurtbox"]
 [editable path="YSort/Cactuses/version3/Hitbox"]
+[editable path="YSort/Cactuses/version11"]
+[editable path="YSort/Cactuses/version11/Hurtbox"]
+[editable path="YSort/Cactuses/version11/Hitbox"]
 [editable path="YSort/Cactuses/version4"]
 [editable path="YSort/Cactuses/version4/Hurtbox"]
 [editable path="YSort/Cactuses/version4/Hitbox"]
+[editable path="YSort/Cactuses/version9"]
+[editable path="YSort/Cactuses/version9/Hurtbox"]
+[editable path="YSort/Cactuses/version9/Hitbox"]
+[editable path="YSort/Cactuses/version6"]
+[editable path="YSort/Cactuses/version6/Hurtbox"]
+[editable path="YSort/Cactuses/version6/Hitbox"]
 [editable path="YSort/Cactuses/version5"]
 [editable path="YSort/Cactuses/version5/Hurtbox"]
 [editable path="YSort/Cactuses/version5/Hitbox"]
+[editable path="YSort/Cactuses/version8"]
+[editable path="YSort/Cactuses/version8/Hurtbox"]
+[editable path="YSort/Cactuses/version8/Hitbox"]
