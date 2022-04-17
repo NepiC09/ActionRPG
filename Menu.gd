@@ -7,7 +7,7 @@ func load_game():
 
 #Кнопка Продолжить игру 
 func _on_TextureButton_pressed():
-	load_game()
+	#load_game()
 	get_tree().change_scene("res://World.tscn")
 
 #Выход из игры из главного меню

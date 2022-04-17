@@ -58,6 +58,12 @@ func _physics_process(delta):
 		ATTACK:
 			attack_state()
 
+func set_direction(input_vector):
+		animationTree.set("parameters/Idle/blend_position", input_vector)
+		animationTree.set("parameters/Run/blend_position", input_vector)
+		animationTree.set("parameters/Attack/blend_position", input_vector)
+		animationTree.set("parameters/Roll/blend_position", input_vector)
+
 #функция движения
 func move_state(delta):
 	#получаемый вектор из кнопок
@@ -76,10 +82,7 @@ func move_state(delta):
 		#задаём направление "толкания/удара"
 		swordHitbox.knockback_vector = input_vector
 		#задаём "направление" анимаций в дереве
-		animationTree.set("parameters/Idle/blend_position", input_vector)
-		animationTree.set("parameters/Run/blend_position", input_vector)
-		animationTree.set("parameters/Attack/blend_position", input_vector)
-		animationTree.set("parameters/Roll/blend_position", input_vector)
+		set_direction(input_vector)
 		#переключаем анимацию
 		animationState.travel("Run")
 		#равномерно увеличиваем вектор изменения положения
@@ -125,7 +128,7 @@ func roll_state():
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		input_vector = input_vector.normalized()
-		animationTree.set("parameters/Attack/blend_position", input_vector)
+		set_direction(input_vector)
 		animationState.travel("Attack")
 		hurtbox.collisionShape.set_deferred("disabled", false)
 		state = ATTACK
