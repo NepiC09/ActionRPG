@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://PlayerPos.gd" type="Script" id=1]
+
+[node name="PlayerPos" type="Node2D"]
+script = ExtResource( 1 )

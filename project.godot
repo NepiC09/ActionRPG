@@ -50,6 +50,7 @@ IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 UserData="*res://addons/github-integration/scripts/user_data.gd"
 RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 FS="*res://UI/ТестСейва/File_system.gd"
+PlayerPos="*res://PlayerPos.gd"
 
 [display]
 

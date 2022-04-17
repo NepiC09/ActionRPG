@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Music and Sounds/Swipe.wav" type="AudioStream" id=7]
 [ext_resource path="res://Music and Sounds/Evade.wav" type="AudioStream" id=8]
 [ext_resource path="res://WhiteColor.shader" type="Shader" id=9]
+[ext_resource path="res://PlayerPos.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ShaderMaterial" id=49]
 shader = ExtResource( 9 )
@@ -901,6 +902,8 @@ stream = ExtResource( 7 )
 anims/RESET = SubResource( 50 )
 anims/Start = SubResource( 51 )
 anims/Stop = SubResource( 52 )
+
+[node name="PlayerPos" parent="." instance=ExtResource( 10 )]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_ended"]

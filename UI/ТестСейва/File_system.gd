@@ -1,26 +1,46 @@
 extends Node
 
-#var input_vectorG = get_node("/root/PlayerStats")
+#Название файла, где будут сохранены все параметры
+var save_filename="user://save_game"
+var game_data = {}
 
-var files = File.new()
-var dirs = Directory.new()
 
-func save_data():
-	files.open("user://save_game", File.WRITE)
-	#files.store_string(to_json(data))
-	var data = {
-		#"IV_x": input_vectorG.x,
-		#"IV_y": input_vectorG.y
-	}
-	files.close()
-	#print('Произошло сохранение', " ",input_vectorG.x, " ", input_vectorG.y)
+func save_game():
+	print("Сохранение")
+	var save_file = File.new()
+	save_file.open(save_filename, File.WRITE)
+	#game_data = Player.get_save_stats()
+	#print(game_data.name)
+	#var saved_nodes = get_tree().get_nodes_in_group("Saved")
+#	for node in saved_nodes:
+		#print("t54")
+		#if node.filename.empty():
+			#break
+					
+	#var node_details = PlayerStats.node.get_save_stats()
+	##save_file.store_line(to_json(node_details))
+		
+	save_file.store_string(to_json(game_data))
+	save_file.store_string("QQQQQQQQQQQQ")
+	print("Сохр")
+	save_file.close()
+	
+	
+	
+	
+	
+	
 	
 	
 func load_data():
-	files.open("user://save_game", File.READ)
-	var data = files.get_var()
-	#input_vectorG.x=data["IV_x"]
-	#input_vectorG.y=data["IV_y"]
-	files.close()
-
-
+	var file = File.new()
+	file.open(save_filename, File.READ)
+	game_data = file.get_var()
+	
+	
+	
+	
+#func _notification(what):
+	#if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST or what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+		#save_game()
+		#pass
