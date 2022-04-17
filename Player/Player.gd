@@ -104,7 +104,7 @@ func move_state(delta):
 	if Input.is_action_just_pressed("roll"):
 		state = ROLL
 		
-	print("КОРДЫ ИЗ МУВ СТЕЙТ: ",global_transform.origin.x,"  ",global_transform.origin.y )
+	#print("КОРДЫ ИЗ МУВ СТЕЙТ: ",position.x,"  ",position.y )
 
 #функция если нажата attack
 func attack_state():
@@ -165,16 +165,20 @@ func AddHealth():
 	stats.health +=1
 
 func get_save_stats():
-	print("КОРДЫ ИЗ ГЕТ СЕЙВА: ",global_transform.origin.x,"  ",global_transform.origin.y )
+	#print("КОРДЫ ИЗ ГЕТ СЕЙВА: ",global_transform.origin.x,"  ",global_transform.origin.y )
 	return {
 		'filename' : get_filename(),
 		'parent' : get_parent().get_path(),
-		'x_pos' : global_transform.origin.x,
-		'y_pos' : global_transform.origin.y,
+		'x_pos' : position.x, #global_transform.origin.x,
+		'y_pos' : position.y #global_transform.origin.y,
 
 }
 
 
 func load_save_stats(stats):
-	global_transform.origin = Vector2(stats.x_pos, stats.y_pos)
+	velocity = Vector2(stats.x_pos, stats.y_pos)
+	print("КОРДЫ ИЗ ЛОАД СЕЙВА ДО: ",position.x,"  ",position.y )
+	transform.origin.x = 15#stats.x_pos
+	position.y = 50#stats.y_pos 
+	print("КОРДЫ ИЗ ЛОАД СЕЙВА: ",position.x,"  ",position.y )
 	
