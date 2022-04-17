@@ -7,6 +7,7 @@ func load_game():
 	#print(data)
 	pass
 	
+	#продолжить
 func _on_TextureButton_pressed():
 	get_tree().change_scene("res://World.tscn")
 	#load_game()

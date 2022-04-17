@@ -45,6 +45,7 @@ func _ready():
 	collisionShape.disabled = true #отключаем коллизии  
 	swordHitbox.knockback_vector = roll_vector #задаём первоначальное значение
 	blinkAnimationPlayer.play("Stop")
+	
 
 #функция которая вызывается каждый фрейм
 func _physics_process(delta):
@@ -147,7 +148,6 @@ func _on_Hurtbox_area_entered(_area):
 	hurtbox.create_hit_effect()
 	var playerHurtSound = PlayerHurtSound.instance()
 	get_tree().current_scene.add_child(playerHurtSound)
-
 
 func _on_Hurtbox_invincibility_started():
 	blinkAnimationPlayer.play("Start")
