@@ -9,7 +9,7 @@ func save_game():
 	print("Сохранение")
 	var save_file = File.new()
 	save_file.open(save_filename, File.WRITE)
-	game_data = Player.get_save_stats()
+	#game_data = Player.get_save_stats()
 	#print(game_data.name)
 	#var saved_nodes = get_tree().get_nodes_in_group("Saved")
 #	for node in saved_nodes:
