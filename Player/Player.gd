@@ -45,7 +45,6 @@ func _ready():
 	collisionShape.disabled = true #отключаем коллизии  
 	swordHitbox.knockback_vector = roll_vector #задаём первоначальное значение
 	blinkAnimationPlayer.play("Stop")
-	animationPlayer.playback_speed = 2
 
 #функция которая вызывается каждый фрейм
 func _physics_process(delta):
@@ -65,7 +64,6 @@ func move_state(delta):
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
-	#print(input_vector.x, " ", input_vector.y)
 	#для адекватного диагонального движения
 	input_vector = input_vector.normalized()
 	
@@ -119,10 +117,16 @@ func roll_state():
 	animationState.travel("Roll")
 	#катимся
 	move()
-#	Это на случай прерывания анимации Roll
-#	if Input.is_action_just_pressed("attack"):
-#		animationState.travel("Attack")
-#		state = ATTACK
+	#Это на случай прерывания анимации Roll
+	if Input.is_action_just_pressed("attack"):
+		var input_vector = Vector2.ZERO
+		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		input_vector = input_vector.normalized()
+		animationTree.set("parameters/Attack/blend_position", input_vector)
+		animationState.travel("Attack")
+		hurtbox.collisionShape.set_deferred("disabled", false)
+		state = ATTACK
 
 #Движение задаётся через вектор положения и функцию move_and_slide (slide-для нормально прохождения через коллизии)
 func move():
@@ -130,8 +134,8 @@ func move():
 
 #когда заканчивается анимация Roll в AnimationTree, то переводится состояние на движение 
 func roll_animation_finished():
-	hurtbox.collisionShape.set_deferred("disabled", false)
 	state = MOVE
+	hurtbox.collisionShape.set_deferred("disabled", false)
 
 #когда заканчивается анимация Attack в AnimationTree, то переводится состояние на движение 
 func attack_animation_finished():
