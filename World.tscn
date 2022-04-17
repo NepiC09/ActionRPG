@@ -1666,104 +1666,114 @@ position = Vector2( -671, -125 )
 [node name="Cactus9" parent="YSort/Cactuses" instance=ExtResource( 21 )]
 position = Vector2( -677, -367 )
 
-[node name="Bat" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bats" type="YSort" parent="YSort"]
+
+[node name="Bat" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 559, 313 )
 
-[node name="Bat2" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat2" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 529, 390 )
 
-[node name="Bat3" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat3" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 632, 352 )
 
-[node name="Bat20" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat20" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 473, 143 )
 
-[node name="Bat21" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat21" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 784, -86 )
 
-[node name="Bat22" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat22" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 725, -168 )
 
-[node name="Bat37" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat37" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 780, -248 )
 
-[node name="Bat38" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat38" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 634, -379 )
 
-[node name="Bat39" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat39" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 594, -220 )
 
-[node name="Bat40" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat40" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 393, -145 )
 
-[node name="Bat41" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat41" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 427, -199 )
 
-[node name="Bat42" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat42" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 397, -417 )
 
-[node name="Bat43" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat43" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 531, -280 )
 
-[node name="Bat46" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat46" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 413, -319 )
 
-[node name="Bat44" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat44" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 384, -66 )
 
-[node name="Bat45" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat45" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 461, -21 )
 
-[node name="Bat47" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat47" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 644, -53 )
 
-[node name="Bat4" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat4" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -542, -129 )
 
-[node name="Bat10" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat10" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -319, -125 )
 
-[node name="Bat17" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat17" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -461, -136 )
 
-[node name="Bat16" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat16" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -350, -202 )
 
-[node name="Bat11" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat11" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -660, -5 )
 
-[node name="Bat19" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat19" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -605, 28 )
 
-[node name="Bat15" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat15" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -569, -69 )
 
-[node name="Bat5" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat5" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -698, -165 )
 
-[node name="Bat14" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat14" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -780, -106 )
 
-[node name="Bat6" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat6" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -671, -317 )
 
-[node name="Bat7" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat7" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -677, -390 )
 
-[node name="Bat13" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat13" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -720, -344 )
 
-[node name="Bat8" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat8" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -496, -397 )
 
-[node name="Bat12" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat12" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -514, -284 )
 
-[node name="Bat18" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat18" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -399, -342 )
 
-[node name="Bat9" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat9" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -596, -196 )
+
+[node name="Hearts" type="YSort" parent="YSort"]
+
+[node name="Heart" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 518, 401 )
+
+[node name="Heart2" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 555, 402 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1837,9 +1847,6 @@ texture_pressed = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Heart" parent="." instance=ExtResource( 12 )]
-position = Vector2( 518, 401 )
 
 [connection signal="pressed" from="PauseSreen/Pause/Вернуться" to="PauseSreen/Pause" method="_on_Back_pressed"]
 [connection signal="pressed" from="PauseSreen/Pause/Сохранить игру" to="PauseSreen/Pause" method="_on__SaveGame_pressed"]
