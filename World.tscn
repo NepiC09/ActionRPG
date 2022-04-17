@@ -1785,6 +1785,15 @@ position = Vector2( 368, -148 )
 [node name="Heart2" parent="YSort/Hearts" instance=ExtResource( 12 )]
 position = Vector2( 555, 402 )
 
+[node name="Heart3" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 519, 408 )
+
+[node name="Heart4" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 550, 440 )
+
+[node name="Heart5" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 507, 432 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealtUI" parent="CanvasLayer" instance=ExtResource( 8 )]
