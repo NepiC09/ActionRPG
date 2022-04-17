@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Без кнопок.png" type="Texture" id=1]
 [ext_resource path="res://UI/Шрифты/vcrosdmonorusbyd.ttf" type="DynamicFontData" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 2.png" type="Texture" id=9]
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 2 нажата.png" type="Texture" id=10]
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 1.png" type="Texture" id=11]
+[ext_resource path="res://Кнопка Продолжить игру.gd" type="Script" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 9
@@ -28,6 +29,37 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=4]
 size = 9
 font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "Fade_In"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -119,6 +151,7 @@ margin_bottom = 63.159
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 4 )
 expand = true
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -159,8 +192,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Fade_In" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade_In"]
+anims/Fade_In = SubResource( 5 )
+anims/RESET = SubResource( 6 )
+
 [connection signal="pressed" from="Фон зелени/Button - Играть" to="." method="_on_Button___pressed"]
 [connection signal="pressed" from="Кнопка Продолжить игру" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Кнопка Продолжить игру" to="Кнопка Продолжить игру" method="_on____pressed"]
 [connection signal="pressed" from="Кнопка Начать новую игру" to="." method="_on_____pressed"]
 [connection signal="pressed" from="Кнопка Выйти из игры" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Кнопка Выйти из игры" to="." method="_on_Quit_pressed"]
