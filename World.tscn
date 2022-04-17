@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -10,15 +10,8 @@
 [ext_resource path="res://UI/HealtUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Pause.gd" type="Script" id=11]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Сохранить игру нажата.png" type="Texture" id=12]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Главное меню нажата.png" type="Texture" id=13]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Вернуться.png" type="Texture" id=14]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Сохранить игру.png" type="Texture" id=15]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Настройки нажата.png" type="Texture" id=16]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Главное меню.png" type="Texture" id=17]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Настройки.png" type="Texture" id=18]
-[ext_resource path="res://UI/Интерфейсы/Кнопки/Кнопки паузы/Вернуться нажата.png" type="Texture" id=19]
+[ext_resource path="res://UI/PauseSreen.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/Add_HP.tscn" type="PackedScene" id=12]
 [ext_resource path="res://DialogSystem/DialogBox.tscn" type="PackedScene" id=20]
 [ext_resource path="res://World/Cactus.tscn" type="PackedScene" id=21]
 [ext_resource path="res://World/Объекты WW/Кактус1.png" type="Texture" id=22]
@@ -1665,21 +1658,24 @@ position = Vector2( -671, -125 )
 [node name="Cactus9" parent="YSort/Cactuses" instance=ExtResource( 21 )]
 position = Vector2( -677, -367 )
 
-[node name="Bat" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bats" type="YSort" parent="YSort"]
+
+[node name="Bat" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 559, 313 )
 
-[node name="Bat2" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat2" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 529, 390 )
 
-[node name="Bat3" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat3" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 632, 352 )
 
-[node name="Bat20" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat20" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 473, 143 )
 
-[node name="Bat21" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat21" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( 784, -86 )
 
+<<<<<<< HEAD
 [node name="Bat22" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 725, -168 )
 
@@ -1715,54 +1711,141 @@ position = Vector2( 461, -21 )
 
 [node name="Bat47" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 644, -53 )
+=======
+[node name="Bat22" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 720, -90 )
 
-[node name="Bat4" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat23" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 688, -333 )
+
+[node name="Bat31" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 540, -338 )
+
+[node name="Bat28" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 397, -16 )
+
+[node name="Bat29" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 458, 12 )
+
+[node name="Bat30" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 634, -165 )
+
+[node name="Bat24" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 379, -329 )
+
+[node name="Bat25" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 366, -171 )
+
+[node name="Bat26" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 398, -148 )
+
+[node name="Bat27" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 427, -171 )
+
+[node name="Bat32" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 655, -164 )
+
+[node name="Bat33" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 659, -42 )
+
+[node name="Bat34" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 619, -113 )
+
+[node name="Bat35" parent="YSort/Bats" instance=ExtResource( 7 )]
+position = Vector2( 499, -91 )
+>>>>>>> 35bae97480cc4a9bfd03dc6e284c25829832aafb
+
+[node name="Bat4" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -542, -129 )
 
-[node name="Bat10" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat10" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -319, -125 )
 
-[node name="Bat17" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat17" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -461, -136 )
 
-[node name="Bat16" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat16" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -350, -202 )
 
-[node name="Bat11" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat11" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -660, -5 )
 
-[node name="Bat19" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat19" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -605, 28 )
 
-[node name="Bat15" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat15" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -569, -69 )
 
-[node name="Bat5" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat5" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -698, -165 )
 
-[node name="Bat14" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat14" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -780, -106 )
 
-[node name="Bat6" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat6" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -671, -317 )
 
-[node name="Bat7" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat7" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -677, -390 )
 
-[node name="Bat13" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat13" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -720, -344 )
 
-[node name="Bat8" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat8" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -496, -397 )
 
-[node name="Bat12" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat12" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -514, -284 )
 
-[node name="Bat18" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat18" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -399, -342 )
 
-[node name="Bat9" parent="YSort" instance=ExtResource( 7 )]
+[node name="Bat9" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -596, -196 )
+
+[node name="Hearts" type="YSort" parent="YSort"]
+
+[node name="Heart" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 480, 364 )
+
+[node name="Heart2" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 507, 408 )
+
+[node name="Heart3" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 529, 413 )
+
+[node name="Heart4" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -464, 408 )
+
+[node name="Heart5" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -448, 400 )
+
+[node name="Heart6" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -432, 384 )
+
+[node name="Heart7" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -432, 368 )
+
+[node name="Heart8" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -448, 360 )
+
+[node name="Heart9" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -464, 368 )
+
+[node name="Heart10" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -480, 360 )
+
+[node name="Heart11" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -496, 368 )
+
+[node name="Heart12" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -496, 384 )
+
+[node name="Heart13" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -480, 400 )
+
+[node name="Heart14" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -480, 400 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1775,71 +1858,7 @@ margin_bottom = 21.0
 [node name="DialogBox" parent="CanvasLayer" instance=ExtResource( 20 )]
 position = Vector2( 160, 72 )
 
-[node name="PauseSreen" type="CanvasLayer" parent="."]
-
-[node name="Pause" type="Control" parent="PauseSreen"]
-pause_mode = 2
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BlackOverlay" type="ColorRect" parent="PauseSreen/Pause"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_scale = Vector2( 1.01012, 1.01292 )
-color = Color( 0, 0, 0, 0.490196 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Вернуться" type="TextureButton" parent="PauseSreen/Pause"]
-margin_left = 105.0
-margin_top = 36.0
-margin_right = 229.0
-margin_bottom = 59.0
-texture_normal = ExtResource( 14 )
-texture_pressed = ExtResource( 19 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Сохранить игру" type="TextureButton" parent="PauseSreen/Pause"]
-margin_left = 105.0
-margin_top = 63.0
-margin_right = 229.0
-margin_bottom = 86.0
-texture_normal = ExtResource( 15 )
-texture_pressed = ExtResource( 12 )
-
-[node name="Настройки" type="TextureButton" parent="PauseSreen/Pause"]
-margin_left = 105.0
-margin_top = 90.0
-margin_right = 229.0
-margin_bottom = 113.0
-texture_normal = ExtResource( 18 )
-texture_pressed = ExtResource( 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Главное меню" type="TextureButton" parent="PauseSreen/Pause"]
-margin_left = 105.0
-margin_top = 117.0
-margin_right = 229.0
-margin_bottom = 140.0
-texture_normal = ExtResource( 17 )
-texture_pressed = ExtResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="pressed" from="PauseSreen/Pause/Вернуться" to="PauseSreen/Pause" method="_on_Back_pressed"]
-[connection signal="pressed" from="PauseSreen/Pause/Сохранить игру" to="PauseSreen/Pause" method="_on__SaveGame_pressed"]
-[connection signal="pressed" from="PauseSreen/Pause/Главное меню" to="PauseSreen/Pause" method="_on_RerurnInMainMenu_pressed"]
+[node name="PauseSreen" parent="." instance=ExtResource( 11 )]
 
 [editable path="Camera2D"]
 [editable path="YSort/Cactuses/version2"]
