@@ -42,6 +42,10 @@ config/name="Action Rpg"
 run/main_scene="res://Menu.tscn"
 config/icon="res://icon.png"
 
+[audio]
+
+channel_disable_threshold_db=-40.0
+
 [autoload]
 
 PlayerStats="*res://Player/PlayerStats.tscn"

@@ -119,10 +119,16 @@ func roll_state():
 	animationState.travel("Roll")
 	#катимся
 	move()
-#	Это на случай прерывания анимации Roll
-#	if Input.is_action_just_pressed("attack"):
-#		animationState.travel("Attack")
-#		state = ATTACK
+#	#Это на случай прерывания анимации Roll
+	if Input.is_action_just_pressed("attack"):
+		var input_vector = Vector2.ZERO
+		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		input_vector = input_vector.normalized()
+		animationTree.set("parameters/Attack/blend_position", input_vector)
+		animationState.travel("Attack")
+		hurtbox.collisionShape.set_deferred("disabled", false)
+		state = ATTACK
 
 #Движение задаётся через вектор положения и функцию move_and_slide (slide-для нормально прохождения через коллизии)
 func move():
@@ -152,6 +158,8 @@ func _on_Hurtbox_invincibility_ended():
 	blinkAnimationPlayer.play("Stop")
 	
 
+func AddHealth():
+	stats.health +=1
 
 #func get_save_stats():
 #	print("G___________")
