@@ -1723,6 +1723,50 @@ position = Vector2( -399, -342 )
 [node name="Bat9" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -596, -196 )
 
+[node name="Hearts" type="YSort" parent="YSort"]
+
+[node name="Heart" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 480, 364 )
+
+[node name="Heart2" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 507, 408 )
+
+[node name="Heart3" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( 529, 413 )
+
+[node name="Heart4" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -464, 408 )
+
+[node name="Heart5" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -448, 400 )
+
+[node name="Heart6" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -432, 384 )
+
+[node name="Heart7" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -432, 368 )
+
+[node name="Heart8" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -448, 360 )
+
+[node name="Heart9" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -464, 368 )
+
+[node name="Heart10" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -480, 360 )
+
+[node name="Heart11" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -496, 368 )
+
+[node name="Heart12" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -496, 384 )
+
+[node name="Heart13" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -480, 400 )
+
+[node name="Heart14" parent="YSort/Hearts" instance=ExtResource( 12 )]
+position = Vector2( -480, 400 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealtUI" parent="CanvasLayer" instance=ExtResource( 8 )]
@@ -1735,9 +1779,6 @@ margin_bottom = 21.0
 position = Vector2( 160, 72 )
 
 [node name="PauseSreen" parent="." instance=ExtResource( 11 )]
-
-[node name="Heart" parent="." instance=ExtResource( 12 )]
-position = Vector2( 528, 320 )
 
 [editable path="Camera2D"]
 [editable path="YSort/Cactuses/version2"]
