@@ -1770,7 +1770,7 @@ position = Vector2( -596, -196 )
 [node name="Hearts" type="YSort" parent="YSort"]
 
 [node name="Heart" parent="YSort/Hearts" instance=ExtResource( 12 )]
-position = Vector2( 518, 401 )
+position = Vector2( 368, -148 )
 
 [node name="Heart2" parent="YSort/Hearts" instance=ExtResource( 12 )]
 position = Vector2( 555, 402 )
