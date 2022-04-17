@@ -164,8 +164,14 @@ func AddHealth():
 func get_save_stats():
 	print("КОРДЫ ИЗ ГЕТ СЕЙВА: ",global_transform.origin.x,"  ",global_transform.origin.y )
 	return {
-		"filename" : get_filename(),
-		"x_pos" : global_transform.origin.x,
-		"y_pos" : global_transform.origin.y,
+		'filename' : get_filename(),
+		'parent' : get_parent().get_path(),
+		'x_pos' : global_transform.origin.x,
+		'y_pos' : global_transform.origin.y,
 
 }
+
+
+func load_save_stats(stats):
+	global_transform.origin = Vector2(stats.x_pos, stats.y_pos)
+	

@@ -3,15 +3,12 @@ extends Control
 	#get_tree().change_scene("res://World.tscn")
 
 func load_game():
-	#FS.load_data()
-	#print(data)
-	pass
+	FS.load_game()
 
 #Кнопка Продолжить игру 
 func _on_TextureButton_pressed():
+	load_game()
 	get_tree().change_scene("res://World.tscn")
-	#load_game()
-	pass
 
 #Выход из игры из главного меню
 func _on_Quit_pressed():
