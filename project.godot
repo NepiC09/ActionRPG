@@ -42,10 +42,6 @@ config/name="Action Rpg"
 run/main_scene="res://Menu.tscn"
 config/icon="res://icon.png"
 
-[audio]
-
-channel_disable_threshold_db=-40.0
-
 [autoload]
 
 PlayerStats="*res://Player/PlayerStats.tscn"
@@ -54,7 +50,7 @@ IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 UserData="*res://addons/github-integration/scripts/user_data.gd"
 RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 FS="*res://UI/ТестСейва/File_system.gd"
-PlayerPos="*res://PlayerPos.gd"
+Player="*res://Player/Player.tscn"
 
 [display]
 
