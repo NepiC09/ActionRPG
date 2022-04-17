@@ -45,6 +45,7 @@ func _ready():
 	collisionShape.disabled = true #отключаем коллизии  
 	swordHitbox.knockback_vector = roll_vector #задаём первоначальное значение
 	blinkAnimationPlayer.play("Stop")
+	animationPlayer.playback_speed = 2
 
 #функция которая вызывается каждый фрейм
 func _physics_process(delta):
@@ -111,6 +112,7 @@ func attack_state():
 
 #функция если нажат roll
 func roll_state():
+	hurtbox.collisionShape.set_deferred("disabled", true)
 	#задаём вектор изменения положения через roll_vector
 	velocity = roll_vector * ROLL_SPEED
 	#методя travel переключает анимацию в AnimationTree
@@ -128,6 +130,7 @@ func move():
 
 #когда заканчивается анимация Roll в AnimationTree, то переводится состояние на движение 
 func roll_animation_finished():
+	hurtbox.collisionShape.set_deferred("disabled", false)
 	state = MOVE
 
 #когда заканчивается анимация Attack в AnimationTree, то переводится состояние на движение 

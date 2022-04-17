@@ -35,4 +35,4 @@ func _on_Hurtbox_invincibility_started():
 	collisionShape.set_deferred("disabled", true)
 
 func _on_Hurtbox_invincibility_ended():
-	collisionShape.disabled = false
+	collisionShape.set_deferred("disabled", false)
