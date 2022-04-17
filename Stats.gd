@@ -9,8 +9,6 @@ func set_default():
 	max_health = default_max_health
 	health = max_health
 
-
-
 #onready, чтобы правильно присвоил
 #setget функция вызывающая при изменении значения переменной
 #надо почитать в документах о ней
