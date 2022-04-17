@@ -1,7 +1,13 @@
 extends Node
 
 #можно менять в редекаторе (задали явно тип)
-export(int) var max_health = 4 setget set_max_health
+export(int) var max_health = 6 setget set_max_health
+
+var default_max_health = 6
+
+func set_default():
+	max_health = default_max_health
+	health = max_health
 
 #onready, чтобы правильно присвоил
 #setget функция вызывающая при изменении значения переменной
