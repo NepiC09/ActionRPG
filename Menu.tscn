@@ -205,8 +205,7 @@ anims/Fade_In = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 
 [connection signal="pressed" from="Фон зелени/Button - Играть" to="." method="_on_Button___pressed"]
-[connection signal="pressed" from="Кнопка Продолжить игру" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Кнопка Продолжить игру" to="Кнопка Продолжить игру" method="_on____pressed"]
 [connection signal="pressed" from="Кнопка Начать новую игру" to="." method="_on_____pressed"]
-[connection signal="pressed" from="Кнопка Выйти из игры" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Кнопка Выйти из игры" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Кнопка Выйти из игры" to="." method="_on_TextureButton_pressed"]

@@ -3,9 +3,8 @@ extends Node
 #Название файла, где будут сохранены все параметры
 var save_filename="user://save_game.txt"
 var game_data = {}
+var World = load("res://World.tscn")
 
-func _ready():
-	load_game()
 	
 func save_game():
 	print("Сохранение")
@@ -33,7 +32,7 @@ func load_game():
 	if not file.file_exists(save_filename):
 		print("rdgfasrgreag")
 		return
-	print("ЗАГРУЗКА ИГРЫ")
+	print("ЗАГРУЗКА ИГРЫ_2")
 	
 	var saved_nodes = get_tree().get_nodes_in_group("Saved")
 	for node in saved_nodes:
@@ -46,7 +45,7 @@ func load_game():
 		var new_obj = load(node_data.filename).instance()
 		get_node(node_data.parent)#.call_deferred('add_child', new_obj)
 		new_obj.load_save_stats(node_data)
-			
+		
 	file.close()
 		
 

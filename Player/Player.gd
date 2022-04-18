@@ -37,6 +37,8 @@ onready var swordHitbox = $HitboxPivot/SwordHibox #хитбокс меча
 onready var hurtbox = $Hurtbox
 onready var blinkAnimationPlayer =$BlinkAnimationPlayer
 
+var pos_x = position.x
+
 #вызывается при готовности объекта
 func _ready():
 	#Мы говорим что произойдёт, над кем и при каком сигнале (сигнал есть в PlayerStats 
@@ -45,7 +47,6 @@ func _ready():
 	collisionShape.disabled = true #отключаем коллизии  
 	swordHitbox.knockback_vector = roll_vector #задаём первоначальное значение
 	blinkAnimationPlayer.play("Stop")
-	animationPlayer.playback_speed = 2
 
 #функция которая вызывается каждый фрейм
 func _physics_process(delta):
@@ -176,9 +177,7 @@ func get_save_stats():
 
 
 func load_save_stats(stats):
-	velocity = Vector2(stats.x_pos, stats.y_pos)
 	print("КОРДЫ ИЗ ЛОАД СЕЙВА ДО: ",position.x,"  ",position.y )
-	transform.origin.x = 15#stats.x_pos
-	position.y = 50#stats.y_pos 
+	global_transform.origin.x =stats.x_pos 
+	global_transform.origin.y =stats.y_pos 
 	print("КОРДЫ ИЗ ЛОАД СЕЙВА: ",position.x,"  ",position.y )
-	
