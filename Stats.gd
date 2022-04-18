@@ -5,18 +5,20 @@ export(int) var max_health = 6 setget set_max_health
 
 var default_max_health = 6
 
+#Позиция персонажа - обновляется при сохранении
 var player_position_x = 440
 var player_position_y = 480
 
+#установка позиций (выззывается на загрузке уровня)
 func set_player_position(x, y):
 	player_position_x = x
 	player_position_y = y
 
+#КОСТЫЛЬ - установка хп при "Новая игра"
 func set_default():
 	max_health = default_max_health
 	health = max_health
 
-#onready, чтобы правильно присвоил
 #setget функция вызывающая при изменении значения переменной
 #надо почитать в документах о ней
 var health = max_health setget set_health

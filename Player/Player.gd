@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+
 #так записываются состояния
 enum{
 	MOVE,
@@ -7,7 +8,11 @@ enum{
 	ATTACK
 }
 
+
+#сделано, чтобы вызывать звук ранения и не привязывать его к игроку
+#т.к. иначе, если игрок умрёт, то звук прервётся 
 const PlayerHurtSound = preload("res://Player/PlayerHurtSound.tscn")
+
 
 #переменная состояния
 var state = MOVE
@@ -25,14 +30,15 @@ export var MAX_SPEED = 80
 export var FRICTION = 600
 export var ROLL_SPEED = 125
 
+
 #эти переменные работают, когда могут принять какое-то значение
 onready var animationPlayer = $AnimationPlayer #Анимация игрока
 onready var animationTree = $AnimationTree #дерево анимаций
 onready var animationState = animationTree.get("parameters/playback") #для переключения анимаций
 onready var collisionShape = $HitboxPivot/SwordHibox/CollisionShape2D #коллизия меча
 onready var swordHitbox = $HitboxPivot/SwordHibox #хитбокс меча
-onready var hurtbox = $Hurtbox
-onready var blinkAnimationPlayer =$BlinkAnimationPlayer
+onready var hurtbox = $Hurtbox #бокс получения урона
+onready var blinkAnimationPlayer =$BlinkAnimationPlayer #блинки при получении урона
 
 
 #вызывается при готовности объекта
@@ -42,13 +48,17 @@ func _ready():
 	animationTree.active = true #активируем анимации
 	collisionShape.disabled = true #отключаем коллизии  
 	swordHitbox.knockback_vector = roll_vector #задаём первоначальное значение
-	blinkAnimationPlayer.play("Stop")
+	blinkAnimationPlayer.play("Stop") #блинки при получении урона - по дефолту не играет
 	
+	#присваиваем игроку коориддинаты из сохранения
 	global_transform.origin.x = stats.player_position_x 
 	global_transform.origin.y = stats.player_position_y
 	
+	#если сохранилось с 0 хп и мы нажали продолжить
+	#чтобы он не создавался 0 хп
 	if(stats.health <= 0):
 		queue_free()
+
 
 #функция которая вызывается каждый фрейм
 func _physics_process(delta):
@@ -61,11 +71,14 @@ func _physics_process(delta):
 		ATTACK:
 			attack_state()
 
+
+#Установка направления персонажа 
 func set_direction(input_vector):
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		animationTree.set("parameters/Run/blend_position", input_vector)
 		animationTree.set("parameters/Attack/blend_position", input_vector)
 		animationTree.set("parameters/Roll/blend_position", input_vector)
+
 
 #функция движения
 func move_state(delta):
@@ -73,8 +86,6 @@ func move_state(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	
-	#print(input_vector.x, " ", input_vector.y)
 	#для адекватного диагонального движения
 	input_vector = input_vector.normalized()
 	
@@ -109,6 +120,7 @@ func move_state(delta):
 		
 	#print("КОРДЫ ИЗ МУВ СТЕЙТ: ",position.x,"  ",position.y )
 
+
 #функция если нажата attack
 func attack_state():
 	#останавливаем игрока
@@ -116,8 +128,10 @@ func attack_state():
 	#включаем анимацию
 	animationState.travel("Attack")
 
+
 #функция если нажат roll
 func roll_state():
+	#включаем неуязвимость
 	hurtbox.collisionShape.set_deferred("disabled", true)
 	#задаём вектор изменения положения через roll_vector
 	velocity = roll_vector * ROLL_SPEED
@@ -136,41 +150,51 @@ func roll_state():
 		hurtbox.collisionShape.set_deferred("disabled", false)
 		state = ATTACK
 
+
 #Движение задаётся через вектор положения и функцию move_and_slide (slide-для нормально прохождения через коллизии)
 func move():
 		velocity = move_and_slide(velocity)
 
+
 #когда заканчивается анимация Roll в AnimationTree, то переводится состояние на движение 
 func roll_animation_finished():
-	hurtbox.collisionShape.set_deferred("disabled", false)
+	hurtbox.collisionShape.set_deferred("disabled", false) #включаем получение урона
 	state = MOVE
+
 
 #когда заканчивается анимация Attack в AnimationTree, то переводится состояние на движение 
 func attack_animation_finished():
 	state = MOVE
 
+
+#если персонажа ударили
 func _on_Hurtbox_area_entered(_area):
-	stats.health -= _area.damage
-	hurtbox.start_invincibility(1)
-	hurtbox.create_hit_effect()
-	var playerHurtSound = PlayerHurtSound.instance()
-	get_tree().current_scene.add_child(playerHurtSound)
+	stats.health -= _area.damage #отнимается хп, указанное в хитбоксе врага
+	hurtbox.start_invincibility(1) #начать неуязвимость
+	hurtbox.create_hit_effect() #создать эффект получения урона
+	#создаём объект со звуком, у которого автоплей и самостоятельное удаление
+	var playerHurtSound = PlayerHurtSound.instance() #получаем "префабы" звука урона
+	get_tree().current_scene.add_child(playerHurtSound) #загружаем на сцену
 
 
+#если началась неуязвимость - начать блинкование
 func _on_Hurtbox_invincibility_started():
 	blinkAnimationPlayer.play("Start")
 
+#когла закончилось - закончить блинкование
 func _on_Hurtbox_invincibility_ended():
 	blinkAnimationPlayer.play("Stop")
-	
 
+
+#Функция добавления хп
 func AddHealth():
 	stats.health +=1
 
+#Иван это написал, я хз
 func get_save_stats():
 	return {
 		'filename' : get_filename(),
 		'parent' : get_parent().get_path(),
-		'x_pos' : position.x, #global_transform.origin.x,
-		'y_pos' : position.y #global_transform.origin.y,
+		'x_pos' : position.x,
+		'y_pos' : position.y
 	}

@@ -41,8 +41,3 @@ func load_game():
 		var node_data = parse_json(file.get_line())
 		PlayerStats.set_player_position(node_data.x_pos, node_data.y_pos)
 	file.close()
-
-#func _notification(what):
-	#if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST or what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
-		#save_game()
-		#pass
