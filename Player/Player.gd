@@ -18,9 +18,6 @@ var velocity = Vector2.ZERO
 #PlayerStats наш глобальный объект
 var stats = PlayerStats
 
-#var input_vector = Vector2.ZERO
-#onready var input_vector = get_node("/root/FS").input_vectorG
-
 
 #константы передвижения
 export var ACCELERATION = 600
@@ -37,7 +34,6 @@ onready var swordHitbox = $HitboxPivot/SwordHibox #хитбокс меча
 onready var hurtbox = $Hurtbox
 onready var blinkAnimationPlayer =$BlinkAnimationPlayer
 
-var pos_x = position.x
 
 #вызывается при готовности объекта
 func _ready():
@@ -47,6 +43,12 @@ func _ready():
 	collisionShape.disabled = true #отключаем коллизии  
 	swordHitbox.knockback_vector = roll_vector #задаём первоначальное значение
 	blinkAnimationPlayer.play("Stop")
+	
+	global_transform.origin.x = stats.player_position_x 
+	global_transform.origin.y = stats.player_position_y
+	
+	if(stats.health <= 0):
+		queue_free()
 
 #функция которая вызывается каждый фрейм
 func _physics_process(delta):
@@ -166,18 +168,9 @@ func AddHealth():
 	stats.health +=1
 
 func get_save_stats():
-	#print("КОРДЫ ИЗ ГЕТ СЕЙВА: ",global_transform.origin.x,"  ",global_transform.origin.y )
 	return {
 		'filename' : get_filename(),
 		'parent' : get_parent().get_path(),
 		'x_pos' : position.x, #global_transform.origin.x,
 		'y_pos' : position.y #global_transform.origin.y,
-
-}
-
-
-func load_save_stats(stats):
-	print("КОРДЫ ИЗ ЛОАД СЕЙВА ДО: ",position.x,"  ",position.y )
-	global_transform.origin.x =stats.x_pos 
-	global_transform.origin.y =stats.y_pos 
-	print("КОРДЫ ИЗ ЛОАД СЕЙВА: ",position.x,"  ",position.y )
+	}

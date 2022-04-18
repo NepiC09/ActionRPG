@@ -5,6 +5,13 @@ export(int) var max_health = 6 setget set_max_health
 
 var default_max_health = 6
 
+var player_position_x = 440
+var player_position_y = 480
+
+func set_player_position(x, y):
+	player_position_x = x
+	player_position_y = y
+
 func set_default():
 	max_health = default_max_health
 	health = max_health

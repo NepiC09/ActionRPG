@@ -30,9 +30,7 @@ func save_game():
 func load_game():
 	var file = File.new()
 	if not file.file_exists(save_filename):
-		print("rdgfasrgreag")
-		return
-	print("ЗАГРУЗКА ИГРЫ_2")
+		print("File Not Exist")
 	
 	var saved_nodes = get_tree().get_nodes_in_group("Saved")
 	for node in saved_nodes:
@@ -41,19 +39,9 @@ func load_game():
 	file.open(save_filename, File.READ)
 	while file.get_position()<file.get_len():	
 		var node_data = parse_json(file.get_line())
-		print("КОРДЫ ИЗ ФАЙЛА ",node_data.x_pos, " ", node_data.y_pos)
-		var new_obj = load(node_data.filename).instance()
-		get_node(node_data.parent)#.call_deferred('add_child', new_obj)
-		new_obj.load_save_stats(node_data)
-		
+		PlayerStats.set_player_position(node_data.x_pos, node_data.y_pos)
 	file.close()
-		
 
-	
-		
-		
-		
-		
 #func _notification(what):
 	#if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST or what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
 		#save_game()
