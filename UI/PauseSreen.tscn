@@ -14,7 +14,6 @@
 
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -62,10 +61,23 @@ __meta__ = {
 }
 
 [node name="Главное меню" type="TextureButton" parent="Pause"]
-margin_left = 105.0
-margin_top = 117.0
-margin_right = 229.0
-margin_bottom = 140.0
+margin_left = 103.0
+margin_top = 124.0
+margin_right = 227.0
+margin_bottom = 147.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Главное меню2" type="TextureButton" parent="Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 140.0
+margin_top = 154.0
+margin_right = -56.0
+margin_bottom = -23.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 5 )
 __meta__ = {
@@ -75,3 +87,4 @@ __meta__ = {
 [connection signal="pressed" from="Pause/Вернуться" to="Pause" method="_on_Back_pressed"]
 [connection signal="pressed" from="Pause/Сохранить игру" to="Pause" method="_on__SaveGame_pressed"]
 [connection signal="pressed" from="Pause/Главное меню" to="Pause" method="_on_RerurnInMainMenu_pressed"]
+[connection signal="pressed" from="Pause/Главное меню2" to="Pause" method="_on__2_pressed"]

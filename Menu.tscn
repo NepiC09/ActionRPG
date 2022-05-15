@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Без кнопок.png" type="Texture" id=1]
 [ext_resource path="res://UI/Шрифты/vcrosdmonorusbyd.ttf" type="DynamicFontData" id=2]
@@ -12,23 +12,7 @@
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 2 нажата.png" type="Texture" id=10]
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 1.png" type="Texture" id=11]
 [ext_resource path="res://Кнопка Продолжить игру.gd" type="Script" id=12]
-
-[sub_resource type="DynamicFont" id=1]
-size = 9
-use_filter = true
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 9
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 9
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 9
-font_data = ExtResource( 2 )
+[ext_resource path="res://Кнопка Начать новую игру.gd" type="Script" id=13]
 
 [sub_resource type="Animation" id=5]
 resource_name = "Fade_In"
@@ -61,6 +45,23 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ) ]
 }
 
+[sub_resource type="DynamicFont" id=1]
+size = 9
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 9
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 9
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 9
+font_data = ExtResource( 2 )
+
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -78,6 +79,69 @@ stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Кнопка Продолжить игру" type="TextureButton" parent="Фон зелени"]
+margin_left = 95.0
+margin_top = 42.0
+margin_right = 219.0
+margin_bottom = 63.159
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 4 )
+expand = true
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Кнопка Начать новую игру" type="TextureButton" parent="Фон зелени"]
+margin_left = 95.0
+margin_top = 69.0
+margin_right = 219.0
+margin_bottom = 90.159
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+expand = true
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Кнопка Настройка" type="TextureButton" parent="Фон зелени"]
+margin_left = 95.0
+margin_top = 97.0
+margin_right = 219.0
+margin_bottom = 118.159
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Кнопка Выйти из игры" type="TextureButton" parent="Фон зелени"]
+margin_left = 95.0
+margin_top = 124.0
+margin_right = 219.0
+margin_bottom = 145.159
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fade_In" type="ColorRect" parent="Фон зелени"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Фон зелени/Fade_In"]
+anims/Fade_In = SubResource( 5 )
+anims/RESET = SubResource( 6 )
 
 [node name="Button - Играть" type="Button" parent="Фон зелени"]
 visible = false
@@ -143,69 +207,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Кнопка Продолжить игру" type="TextureButton" parent="."]
-margin_left = 95.0
-margin_top = 42.0
-margin_right = 219.0
-margin_bottom = 63.159
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 4 )
-expand = true
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Кнопка Начать новую игру" type="TextureButton" parent="."]
-margin_left = 95.0
-margin_top = 69.0
-margin_right = 219.0
-margin_bottom = 90.159
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 10 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Кнопка Настройка" type="TextureButton" parent="."]
-margin_left = 95.0
-margin_top = 97.0
-margin_right = 219.0
-margin_bottom = 118.159
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 5 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Кнопка Выйти из игры" type="TextureButton" parent="."]
-margin_left = 95.0
-margin_top = 124.0
-margin_right = 219.0
-margin_bottom = 145.159
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 8 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Fade_In" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade_In"]
-anims/Fade_In = SubResource( 5 )
-anims/RESET = SubResource( 6 )
-
+[connection signal="pressed" from="Фон зелени/Кнопка Продолжить игру" to="Фон зелени/Кнопка Продолжить игру" method="_on____pressed"]
+[connection signal="pressed" from="Фон зелени/Кнопка Начать новую игру" to="Фон зелени/Кнопка Начать новую игру" method="_on_____pressed"]
+[connection signal="pressed" from="Фон зелени/Кнопка Настройка" to="." method="_on___pressed"]
+[connection signal="pressed" from="Фон зелени/Кнопка Выйти из игры" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Фон зелени/Кнопка Выйти из игры" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Фон зелени/Button - Играть" to="." method="_on_Button___pressed"]
-[connection signal="pressed" from="Кнопка Продолжить игру" to="Кнопка Продолжить игру" method="_on____pressed"]
-[connection signal="pressed" from="Кнопка Начать новую игру" to="." method="_on_____pressed"]
-[connection signal="pressed" from="Кнопка Выйти из игры" to="." method="_on_Quit_pressed"]
-[connection signal="pressed" from="Кнопка Выйти из игры" to="." method="_on_TextureButton_pressed"]

@@ -35,5 +35,5 @@ func load_game():
 	file.open(save_filename, File.READ)
 	while file.get_position()<file.get_len():	
 		var node_data = parse_json(file.get_line())
-		PlayerStats.set_player_position(node_data.x_pos, node_data.y_pos)
+		PlayerStats.set_player_position(node_data.x_pos, node_data.y_pos, node_data.hp)
 	file.close()

@@ -42,6 +42,13 @@ func death():
 	dialogBoxText.visible_characters = 0
 	dialogBoxText.visible = true
 	dialogBox.visible = true
+	var option_menu = load("res://Смерть КЛ.tscn").instance()
+	add_child(option_menu)
+	#print(get_node("Настрйоки").name)
+	get_node("Смерть КЛ").connect("CloseOptionalMenu", self, "CloseOptionalMenu")
+
+func CloseOptionalMenu():
+	get_node("Смерть КЛ").queue_free()
 
 
 func _on_Timer_timeout():

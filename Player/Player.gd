@@ -40,7 +40,7 @@ onready var swordHitbox = $HitboxPivot/SwordHibox #хитбокс меча
 onready var hurtbox = $Hurtbox #бокс получения урона
 onready var blinkAnimationPlayer =$BlinkAnimationPlayer #блинки при получении урона
 
-
+signal sq
 #вызывается при готовности объекта
 func _ready():
 	#Мы говорим что произойдёт, над кем и при каком сигнале (сигнал есть в PlayerStats 
@@ -58,8 +58,16 @@ func _ready():
 	#чтобы он не создавался 0 хп
 	if(stats.health <= 0):
 		queue_free()
+		#ff()
+		
+func ff():
+	var option_menu = load("res://Смерть КЛ.tscn").instance()
+	add_child(option_menu)
+	print(get_node("Смерть КЛ").name)
+	get_node("Смерть КЛ").connect("s1", self, "queue_free")
 
-
+func CloseOptionalMenu():
+	get_node("Настрйоки").queue_free()
 #функция которая вызывается каждый фрейм
 func _physics_process(delta):
 	#переключение состояний
@@ -175,6 +183,8 @@ func _on_Hurtbox_area_entered(_area):
 	#создаём объект со звуком, у которого автоплей и самостоятельное удаление
 	var playerHurtSound = PlayerHurtSound.instance() #получаем "префабы" звука урона
 	get_tree().current_scene.add_child(playerHurtSound) #загружаем на сцену
+	if stats.health < 1:
+		emit_signal("sq")
 
 
 #если началась неуязвимость - начать блинкование
@@ -196,5 +206,6 @@ func get_save_stats():
 		'filename' : get_filename(),
 		'parent' : get_parent().get_path(),
 		'x_pos' : position.x,
-		'y_pos' : position.y
+		'y_pos' : position.y,
+		'hp' : stats.health
 	}
