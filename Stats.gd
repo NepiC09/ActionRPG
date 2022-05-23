@@ -27,7 +27,7 @@ func set_player_position(x, y, hp):
 #КОСТЫЛЬ - установка хп при "Новая игра"
 func set_default():
 	max_health = default_max_health
-	health = max_health
+	health = max_health 
 	player_position_x = 440
 	player_position_y = 480
 
