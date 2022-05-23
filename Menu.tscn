@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Без кнопок.png" type="Texture" id=1]
 [ext_resource path="res://UI/Шрифты/vcrosdmonorusbyd.ttf" type="DynamicFontData" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 1.png" type="Texture" id=11]
 [ext_resource path="res://Кнопка Продолжить игру.gd" type="Script" id=12]
 [ext_resource path="res://Кнопка Начать новую игру.gd" type="Script" id=13]
+[ext_resource path="res://Music and Sounds/Music.mp3" type="AudioStream" id=14]
 
 [sub_resource type="Animation" id=5]
 resource_name = "Fade_In"
@@ -206,6 +207,10 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+autoplay = true
 
 [connection signal="pressed" from="Фон зелени/Кнопка Продолжить игру" to="Фон зелени/Кнопка Продолжить игру" method="_on____pressed"]
 [connection signal="pressed" from="Фон зелени/Кнопка Начать новую игру" to="Фон зелени/Кнопка Начать новую игру" method="_on_____pressed"]

@@ -12,7 +12,7 @@ func save_game():
 	var save_file = File.new()
 	save_file.open(save_filename, File.WRITE)
 	var saved_nodes = get_tree().get_nodes_in_group("Saved")
-	
+	print(saved_nodes)
 	for node in saved_nodes:
 		if node.filename.empty():
 			break

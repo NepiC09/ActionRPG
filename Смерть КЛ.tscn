@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Kill.gd" type="Script" id=1]
 [ext_resource path="res://UI/Шрифты/vcrosdmonorusbyd.ttf" type="DynamicFontData" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 2.png" type="Texture" id=5]
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Кнопка 2 нажата.png" type="Texture" id=6]
 [ext_resource path="res://UI/Интерфейсы/Кнопки/Начальное меню/Без кнопок.png" type="Texture" id=7]
-[ext_resource path="res://Смерть КЛ.gd" type="Script" id=8]
 [ext_resource path="res://Кнопка Начать новую игру.gd" type="Script" id=9]
 
 [sub_resource type="Animation" id=2]
@@ -43,13 +42,38 @@ tracks/0/keys = {
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
 
-[node name="Смерть КЛ" type="CanvasLayer"]
-script = ExtResource( 8 )
+[sub_resource type="Animation" id=4]
+resource_name = "Fade_In"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
 
-[node name="БезКнопок" type="Sprite" parent="."]
-visible = false
-position = Vector2( 160, 101 )
-texture = ExtResource( 7 )
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="Смерть КЛ" type="CanvasLayer"]
 
 [node name="Fade_In" type="ColorRect" parent="."]
 visible = false
@@ -63,6 +87,11 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Fade_In"]
 anims/Fade_In = SubResource( 2 )
 anims/RESET = SubResource( 3 )
+
+[node name="БезКнопок" type="Sprite" parent="."]
+visible = false
+position = Vector2( 160, 101 )
+texture = ExtResource( 7 )
 
 [node name="УЩЕЛ" type="Control" parent="."]
 pause_mode = 2
@@ -113,5 +142,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="УЩЕЛ/Главное меню" to="." method="_on_Main__pressed"]
-[connection signal="pressed" from="УЩЕЛ/Кнопка Начать новую игру" to="." method="_on__New___pressed"]
+[node name="Fade_In" type="ColorRect" parent="УЩЕЛ"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="УЩЕЛ/Fade_In"]
+anims/Fade_In = SubResource( 4 )
+anims/RESET = SubResource( 5 )
+
+[connection signal="pressed" from="УЩЕЛ/Главное меню" to="УЩЕЛ" method="_on_Main__pressed"]
+[connection signal="pressed" from="УЩЕЛ/Кнопка Начать новую игру" to="УЩЕЛ/Кнопка Начать новую игру" method="_on___News__pressed"]

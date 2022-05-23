@@ -57,7 +57,8 @@ func _ready():
 	#если сохранилось с 0 хп и мы нажали продолжить
 	#чтобы он не создавался 0 хп
 	if(stats.health <= 0):
-		queue_free()
+		pass
+		#queue_free()
 		#ff()
 		
 func ff():
@@ -68,6 +69,12 @@ func ff():
 
 func CloseOptionalMenu():
 	get_node("Настрйоки").queue_free()
+	
+	
+	
+	
+	
+	
 #функция которая вызывается каждый фрейм
 func _physics_process(delta):
 	#переключение состояний

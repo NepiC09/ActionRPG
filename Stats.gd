@@ -16,8 +16,8 @@ func set_player_position(x, y, hp):
 	if hp < 1:
 		max_health = default_max_health
 		health = max_health
-		player_position_x = 425
-		player_position_y = 473
+		player_position_x = 440
+		player_position_y = 480
 	else:
 		player_position_x = x
 		player_position_y = y
@@ -27,9 +27,9 @@ func set_player_position(x, y, hp):
 #КОСТЫЛЬ - установка хп при "Новая игра"
 func set_default():
 	max_health = default_max_health
-	health = max_health 
-	player_position_x = 425
-	player_position_y = 473
+	health = max_health
+	player_position_x = 440
+	player_position_y = 480
 
 #setget функция вызывающая при изменении значения переменной
 #надо почитать в документах о ней
@@ -56,25 +56,17 @@ func set_health(value):
 	emit_signal("health_changed", health)
 	#вызов сигнала
 	if health <= 0: 
-		emit_signal("no_health")
-		#yield(get_tree().create_timer(1), "timeout")
-		print("смерть1")
-		#game_over()
-		
-func declare_GO():
-	emit_signal("ggame_over")	
-		
-func game_over()-> void:
-	if health < 1:
-		var option_menu = load("res://Настрйоки.tscn").instance()
-		add_child(option_menu)
+		FS.save_game()
+		#yield(get_tree().create_timer(0.5), "timeout")
+		#var option_menu = load("res://Смерть КЛ.tscn").instance()
+		#add_child(option_menu)
 		#print(get_node("Настрйоки").name)
-		get_node("Настрйоки").connect("CloseOptionalMenu", self, "CloseOptionalMenu")
-
-
+		#get_node("Смерть КЛ").connect("CloseOptionalMenu", self, "CloseOptionalMenu")
+		
+		emit_signal("no_health")
 
 func CloseOptionalMenu():
-	get_node("Настрйоки").queue_free()
+	get_node("Смерть КЛ").queue_free()
 
 #Установка хп изначально максимальным
 func _ready():

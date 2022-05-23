@@ -23,3 +23,20 @@ func _on_____pressed():
 	yield(get_tree().create_timer(0.5), "timeout")
 	get_tree().change_scene("res://World.tscn")
 	PlayerStats.set_default()
+
+
+func _on___NewGame__pressed():
+	#Fade_In_Object.visible = true
+	#AnimationPlayerObject.play("Fade_In")
+	#yield(get_tree().create_timer(0.5), "timeout")
+	#get_tree().change_scene("res://World.tscn")
+	#PlayerStats.set_default()
+	pass
+
+
+func _on___News__pressed():
+	Fade_In_Object.visible = true
+	AnimationPlayerObject.play("Fade_In")
+	yield(get_tree().create_timer(0.5), "timeout")
+	get_tree().change_scene("res://World.tscn")
+	PlayerStats.set_default()
