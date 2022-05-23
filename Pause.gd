@@ -26,6 +26,7 @@ func save_level():
 func _on__SaveGame_pressed():
 	save_level()
 
+signal q
 #Кнопка Главное меню
 func _on_RerurnInMainMenu_pressed():
 	get_tree().paused = false
@@ -33,7 +34,6 @@ func _on_RerurnInMainMenu_pressed():
 	save_level()
 	get_tree().change_scene("res://Menu.tscn")
 	#print("опт")
-	pass
 	
 signal test
 func f():

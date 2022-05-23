@@ -38,5 +38,8 @@ func _on___News__pressed():
 	Fade_In_Object.visible = true
 	AnimationPlayerObject.play("Fade_In")
 	yield(get_tree().create_timer(0.5), "timeout")
-	get_tree().change_scene("res://World.tscn")
+	#get_tree().change_scene("res://World.tscn")
+	
+	var option_menu = load("res://World.tscn").instance()
+	add_child(option_menu)
 	PlayerStats.set_default()

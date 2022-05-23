@@ -13,4 +13,4 @@ func _on____pressed():
 	yield(get_tree().create_timer(0.5), "timeout")
 	FS.load_game()
 	get_tree().change_scene("res://World.tscn")
-	pass
+

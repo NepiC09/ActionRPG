@@ -21,4 +21,4 @@ func _on__pressed():
 
 
 func _on_HSlider_value_changed(value):
-	pass#AudioServer.set_bus_volume_db(0, value)
+	AudioServer.set_bus_volume_db(0, value)
