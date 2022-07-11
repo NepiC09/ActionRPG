@@ -67,9 +67,6 @@ font_data = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Фон зелени" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -215,6 +212,6 @@ autoplay = true
 [connection signal="pressed" from="Фон зелени/Кнопка Продолжить игру" to="Фон зелени/Кнопка Продолжить игру" method="_on____pressed"]
 [connection signal="pressed" from="Фон зелени/Кнопка Начать новую игру" to="Фон зелени/Кнопка Начать новую игру" method="_on_____pressed"]
 [connection signal="pressed" from="Фон зелени/Кнопка Настройка" to="." method="_on___pressed"]
-[connection signal="pressed" from="Фон зелени/Кнопка Выйти из игры" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="Фон зелени/Кнопка Выйти из игры" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Фон зелени/Кнопка Выйти из игры" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="Фон зелени/Button - Играть" to="." method="_on_Button___pressed"]

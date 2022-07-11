@@ -71,10 +71,6 @@ func CloseOptionalMenu():
 	get_node("Настрйоки").queue_free()
 	
 	
-	
-	
-	
-	
 #функция которая вызывается каждый фрейм
 func _physics_process(delta):
 	#переключение состояний
